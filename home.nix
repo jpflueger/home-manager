@@ -25,6 +25,16 @@ in {
       docker-credential-gcr
     ]))
     kubectl
+
+    # yazi optional dependencies
+    jellyfin-ffmpeg
+    p7zip
+    jq
+    poppler
+    fd
+    ripgrep
+    imagemagick
+    wl-clipboard-rs
   ];
 
   home.file = { };
@@ -41,6 +51,7 @@ in {
     lo = "eza --group --header --group-directories-first --oneline";
   };
 
+  home.preferXdgDirectories = true;
   xdg.enable = true;
 
   programs.home-manager.enable = true;
