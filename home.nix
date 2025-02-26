@@ -35,6 +35,8 @@ in {
     ripgrep
     imagemagick
     wl-clipboard-rs
+
+    devenv
   ];
 
   home.file = { };
@@ -122,7 +124,6 @@ in {
   programs.fzf = {
     enable = true;
     colors = {
-      "dark"    = "1";
       "fg"      = "-1";
       "bg"      = "-1";
       "hl"      = "#5fff87";
