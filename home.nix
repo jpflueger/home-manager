@@ -63,6 +63,9 @@ in {
 
   programs.fish = {
     enable = true;
+    shellInitLast = ''
+      fnm env --shell fish | source
+    '';
   };
 
   programs.git = {
