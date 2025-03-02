@@ -25,6 +25,7 @@ in {
       docker-credential-gcr
     ]))
     kubectl
+    k9s
 
     # yazi optional dependencies
     jellyfin-ffmpeg
@@ -44,13 +45,11 @@ in {
   home.sessionVariables = { };
 
   home.shellAliases = {
-    ls = "eza";
-    ll = "eza --group --header --group-directories-first --long --git";
-    lg = "eza --group --header --group-directories-first --long --git --git-ignore";
-    le = "eza --group --header --group-directories-first --long --extended";
-    lt = "eza --group --header --group-directories-first --tree --level 2";
-    lc = "eza --group --header --group-directories-first --across";
-    lo = "eza --group --header --group-directories-first --oneline";
+    ls = "eza --all";
+    ll = "eza --all --group --header --group-directories-first --long --git";
+    lg = "eza --all --group --header --group-directories-first --long --git --git-ignore";
+    le = "eza --all --group --header --group-directories-first --long --extended";
+    lt = "eza --all --group --header --group-directories-first --tree --level 2";
   };
 
   home.preferXdgDirectories = true;
@@ -65,6 +64,7 @@ in {
     enable = true;
     shellInitLast = ''
       fnm env --shell fish | source
+      pyenv init - fish | source
     '';
   };
 
