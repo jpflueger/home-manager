@@ -42,7 +42,10 @@ in {
 
   home.file = { };
 
-  home.sessionVariables = { };
+  home.sessionVariables = {
+    KUBECONFIG = "${config.xdg.configHome}/kube";
+    KUBECACHEDIR = "${config.xdg.cacheHome}/kube";
+  };
 
   home.shellAliases = {
     ls = "eza --all";
@@ -167,6 +170,11 @@ in {
   };
   xdg.configFile."nvim" = {
     source = ./config/nvim;
+    recursive = true;
+  };
+
+  xdg.configFile."k9s" = {
+    source = ./config/k9s;
     recursive = true;
   };
 }
