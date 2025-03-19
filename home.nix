@@ -43,8 +43,6 @@ in {
   home.file = { };
 
   home.sessionVariables = {
-    KUBECONFIG = "${config.xdg.configHome}/kube";
-    KUBECACHEDIR = "${config.xdg.cacheHome}/kube";
   };
 
   home.shellAliases = {
@@ -67,7 +65,6 @@ in {
     enable = true;
     shellInitLast = ''
       fnm env --shell fish | source
-      pyenv init - fish | source
     '';
   };
 
